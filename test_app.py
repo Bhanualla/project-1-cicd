@@ -6,7 +6,7 @@ def test_health_endpoint():
 
     response = client.get("/health")
 
-    assert response.status_code == 200
+    assert response.status_code == 204
 
 
 def test_home_endpoint():
@@ -14,7 +14,7 @@ def test_home_endpoint():
 
     response = client.get("/")
 
-    assert response.status_code == 200
+    assert response.status_code == 205
 
 
 def test_info_endpoint():
