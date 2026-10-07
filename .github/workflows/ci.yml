@@ -22,3 +22,11 @@ jobs:
 
       - name: Run tests
         run: pytest -v
+
+
+      - name: Install security scanner
+        run: pip install pip-audit
+
+      - name: Run dependency security scan
+        run: pip-audit -r requirements.txt
+
