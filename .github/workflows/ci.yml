@@ -25,3 +25,15 @@ jobs:
 
       - name: Run code quality checks
         run: ruff check .
+
+      - name: Install security scanner
+        run: pip install pip-audit
+
+      - name: Run dependency security scan
+        run: pip-audit -r requirements.txt
+
+      - name: Install Bandit
+        run: pip install bandit
+
+      - name: Run source code security scan
+        run: bandit app.py
