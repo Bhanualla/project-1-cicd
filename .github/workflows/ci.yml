@@ -44,3 +44,6 @@ jobs:
 
       - name: Run source code security scan
         run: bandit app.py
+
+      - name: Build Docker Image
+        run: docker build -t employee-portal:1.2 .
